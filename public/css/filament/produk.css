@@ -1,0 +1,84 @@
+/* =========== RESET & ROOT =========== */
+:root{
+  --bg-krem: #FDF4E3;
+  --border-oranye: #F6A56A;
+  --brand: #D65A11;
+  --brand-2: #D76019;
+  --shadow: 0 4px 4px rgba(246,165,106,.25);
+  --btn-shopee: #E84D1F;
+  --btn-tiktok: #160C1A;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:'Poppins',system-ui,Arial; background:#fff; color:#000; }
+
+/* =========== WRAPPER =========== */
+.produk{ position:relative; min-height:100vh; padding-bottom:140px; overflow:hidden; }
+
+/* =========== HEADER =========== */
+.topbar{
+  position:relative; height:120px; background:var(--bg-krem);
+  border:5px solid var(--border-oranye); box-shadow:var(--shadow);
+}
+.topbar__inner{ max-width:1248px; margin:0 auto; height:100%; display:flex; align-items:center; gap:18px; padding:0 24px; }
+.brand__logo{ width:86px; height:86px; border-radius:50%; object-fit:cover; }
+.brand__title{ color:var(--brand); font-weight:700; font-size:24px; margin-right:auto; }
+
+.nav{ display:flex; gap:22px; align-items:center; }
+.nav__link{ color:var(--brand); font-weight:600; font-size:22px; text-decoration:none; }
+.nav__pill{ background:rgba(214,90,17,.96); border-radius:7px; padding:8px 16px; }
+.nav__link--active{ color:#fff; }
+
+/* =========== PAGE TITLE =========== */
+.page-title{
+  text-align:center; color:var(--brand); font-size:36px; font-weight:700;
+  margin:26px 0 18px;
+}
+
+/* =========== OWNER BADGE =========== */
+.owner-badge{
+  max-width:1248px; margin:20px auto 14px; background:rgba(255,199,158,.68);
+  border-radius:5px; height:60px; display:flex; align-items:center; justify-content:center;
+}
+.owner-badge span{ color:var(--brand); font-weight:700; font-size:26px; }
+.owner-badge--spaced{ margin-top:40px; }
+
+/* =========== GRID KARTU (2 kolom) =========== */
+.grid{
+  max-width:1248px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:38px;
+}
+.card{
+  background:var(--bg-krem); border:1px solid var(--border-oranye); border-radius:10px;
+  box-shadow:none; display:grid; grid-template-columns:260px 1fr; gap:22px; padding:22px;
+}
+.card__media img{ width:260px; height:260px; object-fit:cover; border-radius:8px; }
+.card__title{ color:var(--brand); font-size:32px; font-weight:700; margin:0 0 6px; }
+.card__desc{ font-size:14px; font-weight:600; margin:0 0 14px; color:#000; }
+.card__label{ color:var(--brand); font-weight:700; font-size:16px; margin-bottom:2px; }
+.card__meta{ font-size:14px; font-weight:600; margin:0 0 16px; }
+
+.card__actions{ display:flex; gap:22px; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:180px; height:48px; border-radius:6px; color:#fff; font-weight:700; text-decoration:none;
+}
+.btn--shopee{ background:var(--btn-shopee); }
+.btn--tiktok{ background:var(--btn-tiktok); }
+.btn.is-disabled{ opacity:.45; pointer-events:none; }
+
+/* =========== FOOTER =========== */
+.footer{ position:relative; height:150px; margin-top:48px; }
+.footer__bar{
+  position:absolute; inset:auto 0 0 0; height:150px; background:var(--bg-krem);
+  border-top:5px solid var(--border-oranye); box-shadow:var(--shadow);
+}
+.footer__text{
+  position:absolute; left:50%; transform:translateX(-50%); bottom:44px;
+  font-weight:700; font-size:20px; color:#000;
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 1080px){
+  .grid{ grid-template-columns:1fr; }
+  .card{ grid-template-columns:1fr; }
+  .card__media img{ width:100%; height:220px; }
+}
